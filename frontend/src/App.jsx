@@ -1,10 +1,9 @@
 import "./app.css"
+import Layout from "./layout/Layout"
 
 function App() {
   return (
-    <>
-      <div className= "text-[20px] text-blue-600">Younes AIT BEN ALI</div>
-    </>
+    <Layout />
   )
 }
 
