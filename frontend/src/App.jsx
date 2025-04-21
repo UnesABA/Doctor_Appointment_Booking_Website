@@ -1,7 +1,9 @@
+import "./app.css"
+
 function App() {
   return (
     <>
-      <div>Younes AIT BEN ALI</div>
+      <div className= "text-[20px] text-blue-600">Younes AIT BEN ALI</div>
     </>
   )
 }
