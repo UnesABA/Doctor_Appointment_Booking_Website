@@ -26,7 +26,11 @@
   }
 
   .header{
-    @apply bg-[url("./assets/images/mask.png")] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
+    @apply bg-[url("./assets/images/dwa.jpg")] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
+  }
+
+  .hero__section{
+    @apply bg-[url("./assets/images/dwa.jpg")] bg-no-repeat bg-center bg-cover;
   }
 }
 
