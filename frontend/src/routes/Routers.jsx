@@ -1,14 +1,14 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom"
-import Home                             from "../pages/Home"
-import Doctors                          from "../pages/Doctors/Doctors"
-import DoctorsDetails                   from "../pages/Doctors/DoctorsDetails"
-import Login                            from "../pages/Login"
-import Services                         from "../pages/Services"
-import Signup                           from "../pages/Signup"
+import { Routes, Route } from "react-router-dom"
+import Home              from "../pages/Home"
+import Doctors           from "../pages/Doctors/Doctors"
+import DoctorsDetails    from "../pages/Doctors/DoctorsDetails"
+import Login             from "../pages/Login"
+import Services          from "../pages/Services"
+import Signup            from "../pages/Signup"
+import Contact           from "../pages/Contact"
 
 const Routers = () => {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path= "/"            element= {<Home />} />
         <Route path= "/home"        element= {<Home />} />
@@ -19,7 +19,6 @@ const Routers = () => {
         <Route path= "/register"    element= {<Signup />} />
         <Route path= "/contact"     element= {<Contact />} />
       </Routes>
-    </BrowserRouter>
   )
 }
 
