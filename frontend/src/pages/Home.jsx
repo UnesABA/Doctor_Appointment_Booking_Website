@@ -1,10 +1,15 @@
-import doctor1 from "../assets/images/Doctor1.jpg"
-import doctor9 from "../assets/images/Doctor9.jpg"
-import doctor4 from "../assets/images/Doctor4.jpg"
+import doctor1          from "../assets/images/Doctor1.jpg"
+import doctor9          from "../assets/images/Doctor9.jpg"
+import doctor4          from "../assets/images/Doctor4.jpg"
+import icon01           from "../assets/images/icon01.png"
+import icon02           from "../assets/images/icon02.png"
+import icon03           from "../assets/images/icon03.png"
+import { Link }         from "react-router-dom"
+import { BsArrowRight } from "react-icons/bs"
 
 const Home = () => {
   return (
-    <>
+    <div className= "home">
       {/* ============== Hero Section ============== */}
         
           <section className= "hero__section pt-[60px] 2xl:h-[800px]">
@@ -65,7 +70,81 @@ const Home = () => {
           </section>
         
       {/* ============== Hero Section End ============== */}
-    </>
+
+      <section>
+        <div className="container">
+          <div className= "lg:w-[470px] mx-auto">
+            <h2 className= "heading text-center">
+              Where expert care meets genuine compassion
+            </h2>
+
+            <p className="text__para text-center">
+             With world-class care for everyone, our health system delivers unmatched, expert healthcare
+            </p>
+          </div>
+
+          <div className= "grid grid-col-1 mt-[30px] gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px] lg:mt-[55px]">
+            <div className="py-[30px] px-5">
+              <div className= "flex items-center justify-center">
+                <img src= {icon01} />
+              </div>
+
+              <div className= "mt-[30px]">
+                <h2 className= "text-[26px] text-center leading-9 text-headingColor font-[700]">
+                  Find a Doctor
+                </h2>
+
+                <p className= "text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">
+                 Exceptional care for all — our health network combines expertise and innovation,  from laboratory research to clinical excellence
+                </p>
+
+                <Link to= "/doctors" className= "w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none ">
+                  <BsArrowRight className= "group-hover:text-white w-6 h-5"/>
+                </Link>
+              </div>
+            </div>
+            <div className="py-[30px] px-5">
+              <div className= "flex items-center justify-center">
+                <img src= {icon02} />
+              </div>
+
+              <div className= "mt-[30px]">
+                <h2 className= "text-[26px] text-center leading-9 text-headingColor font-[700]">
+                  Find a Location
+                </h2>
+
+                <p className= "text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">
+                 Exceptional care for all — our health network combines expertise and innovation,  from laboratory research to clinical excellence
+                </p>
+
+                <Link to= "/doctors" className= "w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none ">
+                  <BsArrowRight className= "group-hover:text-white w-6 h-5"/>
+                </Link>
+              </div>
+            </div>
+            <div className="py-[30px] px-5">
+              <div className= "flex items-center justify-center">
+                <img src= {icon03} />
+              </div>
+
+              <div className= "mt-[30px]">
+                <h2 className= "text-[26px] text-center leading-9 text-headingColor font-[700]">
+                  Make an Appointment
+                </h2>
+
+                <p className= "text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">
+                  Exceptional care for all — our health network combines expertise and innovation, from laboratory research to clinical excellence
+                </p>
+
+                <Link to= "/doctors" className= "w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none ">
+                  <BsArrowRight className= "group-hover:text-white w-6 h-5"/>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 
