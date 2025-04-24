@@ -6,11 +6,12 @@ import icon02           from "../assets/images/icon02.png"
 import icon03           from "../assets/images/icon03.png"
 import { Link }         from "react-router-dom"
 import { BsArrowRight } from "react-icons/bs"
+import About            from "../components/About/About"
 
 const Home = () => {
   return (
     <div className= "home">
-      {/* ============== Hero Section ============== */}
+      {/* ============== Hero Section Start ============== */}
         
           <section className= "hero__section pt-[60px] 2xl:h-[800px]">
             <div className="container">
@@ -144,6 +145,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <About />
+
     </div>
   )
 }
