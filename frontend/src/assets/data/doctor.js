@@ -1,6 +1,6 @@
-import doctor15 from "../images/doctor15.jpg";
-import doctor2  from "../images/doctor2.jpg";
-import doctor8  from "../images/doctor13.jpg";
+import doctor15 from "../images/doctor15.jpg"
+import doctor2  from "../images/doctor2.jpg"
+import doctor8  from "../images/doctor13.jpg"
 
 export const doctors = [
   {
@@ -33,4 +33,4 @@ export const doctors = [
     totalPatients : 1266,
     hospital      : "AIT BEN ALI Hospital, Casablanca.",
   },
-];
+]

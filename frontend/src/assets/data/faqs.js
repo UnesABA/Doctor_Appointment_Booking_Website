@@ -1,27 +1,27 @@
 export const faqs = [
   {
-    question: "What is your medical care?",
-    content:
-      "One Medical was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.",
+    question: "How do I book an appointment?",
+    content :
+      "You can easily book an appointment through our website or mobile app. Simply choose a doctor, select a time slot, and confirm your booking.",
   },
   {
-    question: "What happens if I need to go a hospital?",
-    content:
-      "One Medical was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.",
+    question: "Are your doctors board certified?",
+    content :
+      "Yes, all of our doctors are fully licensed and board certified in their respective fields. We ensure the highest standards of care for our patients.",
   },
   {
-    question: "What happens if I need to go a hospital?",
-    content:
-      "One Medical was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.",
+    question: "Do you offer virtual consultations?",
+    content :
+      "Absolutely. We provide secure virtual consultations for patients who prefer remote care or cannot visit the clinic in person.",
   },
   {
-    question: "Can I visit your medical office?",
-    content:
-      "One Medical was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.",
+    question: "What insurance plans do you accept?",
+    content :
+      "We accept a wide range of insurance providers. Please visit our insurance page or contact support to confirm if your plan is accepted.",
   },
   {
-    question: "Does you provide urgent care?",
-    content:
-      "One Medical was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.",
+    question: "Can I get test results online?",
+    content :
+      "Yes, once your results are ready, you can view them securely through your patient portal. You will also be notified via email or SMS.",
   },
-];
+]
