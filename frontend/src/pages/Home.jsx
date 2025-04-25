@@ -1,18 +1,19 @@
-import doctor1          from "../assets/images/Doctor1.jpg"
-import doctor9          from "../assets/images/Doctor9.jpg"
-import doctor4          from "../assets/images/Doctor4.jpg"
-import icon01           from "../assets/images/icon01.png"
-import icon02           from "../assets/images/icon02.png"
-import icon03           from "../assets/images/icon03.png"
-import videoIcon        from "../assets/images/video-icon.png"
-import faqImg           from "../assets/images/faq-img.png"
-import doctor10         from "../assets/images/doctor10.jpg"
-import { Link }         from "react-router-dom"
-import { BsArrowRight } from "react-icons/bs"
-import About            from "../components/About/About"
-import ServiceList      from "../components/Services/ServiceList"
-import DoctorList       from "../components/Doctors/DoctorList"
-import FaqList from "../components/FAQ/faqList"
+import doctor1          from "../assets/images/Doctor1.jpg";
+import doctor9          from "../assets/images/Doctor9.jpg";
+import doctor4          from "../assets/images/Doctor4.jpg";
+import icon01           from "../assets/images/icon01.png";
+import icon02           from "../assets/images/icon02.png";
+import icon03           from "../assets/images/icon03.png";
+import videoIcon        from "../assets/images/video-icon.png";
+import faqImg           from "../assets/images/faq-img.png";
+import doctor10         from "../assets/images/doctor10.jpg";
+import { Link }         from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
+import About            from "../components/About/About";
+import ServiceList      from "../components/Services/ServiceList";
+import DoctorList       from "../components/Doctors/DoctorList";
+import FaqList          from "../components/FAQ/faqList";
+import Testimonial      from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -282,24 +283,34 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
-            <div className= "w-1/2 hidden md:block">
+            <div className="w-1/2 hidden md:block">
               <img src={faqImg} />
             </div>
 
-            <div className= "w-full md:w-1/2">
-              <h2 className= "heading">
-                Frequently Asked Questions
-              </h2>
+            <div className="w-full md:w-1/2">
+              <h2 className="heading">Frequently Asked Questions</h2>
               <FaqList />
             </div>
           </div>
         </div>
       </section>
       {/* ============== FAQ Section End ============== */}
+      {/* ============== Testimonial Start ============== */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">Patient testimonials</h2>
+            <p className="text__para text-center">
+             Hear directly from our patients about their care experience with us
+            </p>
+          </div>
 
-
+          <Testimonial />
+        </div>
+      </section>
+      {/* ============== Testimonial End ============== */}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
