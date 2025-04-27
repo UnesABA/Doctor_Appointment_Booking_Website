@@ -1,6 +1,8 @@
 import { useState } from "react";
 import doctor       from "../../assets/images/about1.jpg";
 import starIcon     from "../../assets/images/Star.png";
+import DoctorAbout  from "./DoctorAbout";
+import Feedback     from "./Feedback";
 
 const DoctorsDetails = () => {
   const [tab, setTab] = useState("About")
@@ -53,7 +55,9 @@ const DoctorsDetails = () => {
             </div>
 
             <div className= "mt-[50px]">
-              
+              {
+                tab === "About" ? <DoctorAbout /> : <Feedback />
+              }
             </div>
           </div> 
         </div>
