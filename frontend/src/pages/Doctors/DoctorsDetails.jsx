@@ -1,12 +1,13 @@
 import { useState } from "react";
-import doctor       from "../../assets/images/about1.jpg";
-import starIcon     from "../../assets/images/Star.png";
-import DoctorAbout  from "./DoctorAbout";
-import Feedback     from "./Feedback";
+import doctor from "../../assets/images/about1.jpg";
+import starIcon from "../../assets/images/Star.png";
+import DoctorAbout from "./DoctorAbout";
+import Feedback from "./Feedback";
+import SidePanel from "./SidePanel";
 
 const DoctorsDetails = () => {
-  const [tab, setTab] = useState("About")
-  
+  const [tab, setTab] = useState("About");
+
   return (
     <section>
       <div className="max-w-[1170px] px-5 mx-auto">
@@ -33,33 +34,41 @@ const DoctorsDetails = () => {
                 </div>
 
                 <p className="text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px]">
-                  Expert surgeon committed to precision,<br/> 
+                  Expert surgeon committed to precision,
+                  <br />
                   care, and life-changing results.
                 </p>
               </div>
             </div>
 
-            <div className= "mt-[50px] border-b border-solid border-[#0066ff34]">
-              <button 
-                onClick= {() => setTab("About")} 
-                className= {`${tab === "About" && "border-b border-solid border-primaryColor"} py-2 px-5 text-[16px] leading-7text-headingColor font-semibold`}
-                >
+            <div className="mt-[50px] border-b border-solid border-[#0066ff34]">
+              <button
+                onClick={() => setTab("About")}
+                className={`${
+                  tab === "About" && "border-b border-solid border-primaryColor"
+                } py-2 px-5 text-[16px] leading-7text-headingColor font-semibold`}
+              >
                 About
               </button>
-              <button 
-                onClick= {() => setTab("Feedback")} 
-                className= {`${tab === "Feedback" && "border-b border-solid border-primaryColor"} py-2 px-5 text-[16px] leading-7text-headingColor font-semibold`}
-                >
+              <button
+                onClick={() => setTab("Feedback")}
+                className={`${
+                  tab === "Feedback" &&
+                  "border-b border-solid border-primaryColor"
+                } py-2 px-5 text-[16px] leading-7text-headingColor font-semibold`}
+              >
                 Feedback
               </button>
             </div>
 
-            <div className= "mt-[50px]">
-              {
-                tab === "About" ? <DoctorAbout /> : <Feedback />
-              }
+            <div className="mt-[50px]">
+              {tab === "About" ? <DoctorAbout /> : <Feedback />}
             </div>
-          </div> 
+          </div>
+
+          <div>
+            <SidePanel />
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { formatDate } from "../../routes/utils/formateDate";
+import { formatDate } from "../../utils/formateDate"
 
 const DoctorAbout = () => {
   return (
@@ -85,4 +85,4 @@ const DoctorAbout = () => {
   );
 };
 
-export default DoctorAbout;
+export default DoctorAbout
