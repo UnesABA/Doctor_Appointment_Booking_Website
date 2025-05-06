@@ -19,8 +19,12 @@ export const register = async (req, res) => {
     let user = null
 
     // verify if the user already exist
-    if (role === "patient" || role === "doctor") {
+    if (role === "patient") {
       user = await User.findOne({ email })
+    }
+    
+    if (role === "doctor") {
+      user = await Doctor.findOne({ email })
     }
 
     // if the user already exist
@@ -43,7 +47,7 @@ export const register = async (req, res) => {
       })
     }
     if(role === "doctor"){
-      user = new User({
+      user = new Doctor({
         name,
         email, 
         password: hashPassword,
@@ -59,7 +63,7 @@ export const register = async (req, res) => {
     
   } catch (error) {
     console.error(error)
-    return res.status(500).json({ message: "Something went wrong" })
+    return res.status(500).json({ message: "Something went wrong "+ error })
   }
 }
 
