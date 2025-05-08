@@ -68,7 +68,7 @@ export const register = async (req, res) => {
 }
 
 export const login = async (req, res) => {
-  const {email, password} = req.body
+  const {email} = req.body
   
   try {
     let user = null 
@@ -89,13 +89,13 @@ export const login = async (req, res) => {
     }
     
     //compare password 
-    const isPasswordMatch = await bcrypt.compare(password, user.password)
+    const isPasswordMatch = await bcrypt.compare(req.body.password, user.password)
     
     if(!isPasswordMatch){
       return res.status(404).json({ message: "Invalid Credentials" })
     }
     
-    //get Toke
+    //get Token
     const token = generateToken(user)
     
     const {password, role, appointments, ...rest} = user._doc
@@ -103,6 +103,6 @@ export const login = async (req, res) => {
     return res.status(200).json({ message: "login successful", token, data: {...rest}, role })
     
   } catch (error) {
-    return res.status(500).json({ message: "Failed to login" })
+    return res.status(500).json({ message: "Failed to login " + error })
   }
 }
