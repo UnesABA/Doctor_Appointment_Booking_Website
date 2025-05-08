@@ -1,17 +1,12 @@
-import express from "express"
-import {
-  updateUser,
-  deleteUser,
-  getSingleUser,
-  getAllUsers,
-} from "../Controllers/userController.js"
-import { authentificate } from "../auth/verifyToken.js"
+import express                                                from "express"
+import { updateUser, deleteUser, getSingleUser, getAllUsers } from "../Controllers/userController.js"
+import { authentificate, restrict }                           from "../auth/verifyToken.js"
 
 const route = express.Router()
 
-route.get("/:id", authentificate, getSingleUser)
-route.get("/", getAllUsers)
-route.put("/:id", updateUser)
-route.delete("/:id", deleteUser)
+route.get("/:id"   , authentificate, restrict(["patient"]), getSingleUser)
+route.get("/"      , authentificate, restrict(["admin"])  , getAllUsers)
+route.put("/:id"   , authentificate, restrict(["patient"]), updateUser)
+route.delete("/:id", authentificate, restrict(["patient"]), deleteUser)
 
 export default route
