@@ -1,19 +1,19 @@
-import doctor1          from "../assets/images/Doctor1.jpg";
-import doctor9          from "../assets/images/Doctor9.jpg";
-import doctor4          from "../assets/images/Doctor4.jpg";
-import icon01           from "../assets/images/icon01.png";
-import icon02           from "../assets/images/icon02.png";
-import icon03           from "../assets/images/icon03.png";
-import videoIcon        from "../assets/images/video-icon.png";
-import faqImg           from "../assets/images/faq-img.png";
-import doctor10         from "../assets/images/doctor10.jpg";
-import { Link }         from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
-import About            from "../components/About/About";
-import ServiceList      from "../components/Services/ServiceList";
-import DoctorList       from "../components/Doctors/DoctorList";
-import FaqList          from "../components/FAQ/faqList";
-import Testimonial      from "../components/Testimonial/Testimonial";
+import doctor1          from "../assets/images/Doctor1.jpg"
+import doctor9          from "../assets/images/Doctor9.jpg"
+import doctor4          from "../assets/images/Doctor4.jpg"
+import icon01           from "../assets/images/icon01.png"
+import icon02           from "../assets/images/icon02.png"
+import icon03           from "../assets/images/icon03.png"
+import videoIcon        from "../assets/images/video-icon.png"
+import faqImg           from "../assets/images/faq-img.png"
+import doctor10         from "../assets/images/doctor10.jpg"
+import { Link }         from "react-router-dom"
+import { BsArrowRight } from "react-icons/bs"
+import About            from "../components/About/About"
+import ServiceList      from "../components/Services/ServiceList"
+import DoctorList       from "../components/Doctors/DoctorList"
+import FaqList          from "../components/FAQ/faqList"
+import Testimonial      from "../components/Testimonial/Testimonial"
 
 const Home = () => {
   return (
@@ -310,7 +310,7 @@ const Home = () => {
       </section>
       {/* ============== Testimonial End ============== */}
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
