@@ -8,9 +8,10 @@ const route = express.Router()
 //nested route
 route.use("/:doctorId/reviews", reviewRouter)
 
-route.get("/:id"   , authentificate, getSingleDoctor)
-route.get("/"      , authentificate, getAllDoctors)
-route.put("/:id"   , authentificate, restrict(["doctor"]), updateDoctor)
-route.delete("/:id", authentificate, restrict(["doctor"]), deleteDoctor)
+route.get("/:id"                         , authentificate, getSingleDoctor)
+route.get("/"                            , authentificate, getAllDoctors)
+route.put("/:id"                         , authentificate, restrict(["doctor"]), updateDoctor)
+route.delete("/:id"                      , authentificate, restrict(["doctor"]), deleteDoctor)
+route.get("/profile/me"                  , authentificate, restrict(["doctor"]), getDoctorProfile)
 
 export default route
