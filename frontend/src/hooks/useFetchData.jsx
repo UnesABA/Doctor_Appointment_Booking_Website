@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react"
-<<<<<<< HEAD
 import { token } from "../config.js"
-=======
-import { token } from "../../config.js"
-import { toast } from "react-toastify"
->>>>>>> feature_hooks
 
 const useFetchData = (url) => {
   const [data, setData] = useState([])
@@ -27,7 +22,7 @@ const useFetchData = (url) => {
           throw new Error(result.message)
         }
 
-        setData(result.data)
+        setData(Array.isArray(result.data) ? result.data : [])
         setLoading(false)
       } catch (error) {
         setLoading(false)
