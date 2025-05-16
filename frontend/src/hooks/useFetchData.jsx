@@ -22,7 +22,7 @@ const useFetchData = (url) => {
           throw new Error(result.message)
         }
 
-        setData(Array.isArray(result.data) ? result.data : [])
+        setData(result.data)
         setLoading(false)
       } catch (error) {
         setLoading(false)

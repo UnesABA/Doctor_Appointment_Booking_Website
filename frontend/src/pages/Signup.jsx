@@ -31,7 +31,7 @@ const Signup = () => {
 
   const handleFileChanges = async event =>{
     const file = event.target.files[0]
-    const data = uploadImageToCloudinary(file) 
+    const data = await uploadImageToCloudinary(file) 
 
     setPreviewURL(data.url)
     setSelectedFile(data.url)
