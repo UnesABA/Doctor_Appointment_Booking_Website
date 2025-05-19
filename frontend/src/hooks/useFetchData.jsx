@@ -8,11 +8,10 @@ const useFetchData = (url) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true)
       try {
         const res = await fetch(url, {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token()}`,
           },
         })
 
@@ -23,9 +22,7 @@ const useFetchData = (url) => {
         }
 
         setData(result.data)
-        setLoading(false)
       } catch (error) {
-        setLoading(false)
         setError(error.message)
       }
     }

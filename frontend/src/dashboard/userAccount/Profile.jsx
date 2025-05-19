@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
-import { useNavigate }         from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import uploadImageToCloudinary from "../../utils/uploadCloudinary.js"
-import { BASE_URL, token }     from "../../config.js"
-import { toast }               from "react-toastify"
-import HashLoader              from "react-spinners/hashLoader"
+import { BASE_URL, token } from "../../config.js"
+import { toast } from "react-toastify"
+import HashLoader from "react-spinners/hashLoader"
 
-const Profile = ({user}) => {
+const Profile = ({ user }) => {
   const [selectedFile, setSelectedFile] = useState(null)
-  const [loading, setLoading]           = useState(false)
-  const [formData, setFormData]         = useState({
+  const [loading, setLoading] = useState(false)
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
@@ -22,7 +22,7 @@ const Profile = ({user}) => {
   useEffect(() => {
     if (!user || !user.name) return
 
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       name: user.name || "",
       photo: user.photo || "",
@@ -58,8 +58,8 @@ const Profile = ({user}) => {
       const res = await fetch(`${BASE_URL}/users/${user._id}`, {
         method: "put",
         headers: {
-          "Content-Type" : "application/json",
-          "authorization": `Bearer ${token}`
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
       })
@@ -128,7 +128,6 @@ const Profile = ({user}) => {
         </div>
 
         <div className="mb-5 flex items-center justify-between">
-          
           <label
             htmlFor=""
             className="text-headingColor font-bold text-[16px] leading-7"
