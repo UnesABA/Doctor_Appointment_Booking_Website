@@ -1,20 +1,16 @@
 import { formatDate } from "../../utils/formateDate"
 
-const DoctorAbout = ({name, about, qualifications, experiences}) => {
+const DoctorAbout = ({ name, about, qualifications, experiences }) => {
+  console.log(qualifications)
   return (
     <>
       <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
         About of
         <span className="text-irisBlueColor font-bold text-[24px] leading-9">
-          Nabila LMAANI
+          {name}
         </span>
       </h3>
-      <p className="text__para">
-        Dr. Nabila LMAANI is a highly skilled surgeon known for her precision,
-        dedication, and compassionate care. With years of experience, she
-        strives to deliver the best outcomes and transform the lives of her
-        patients every day.
-      </p>
+      <p className="text__para">{about}</p>
 
       <div className="mt-12">
         <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">
@@ -22,19 +18,26 @@ const DoctorAbout = ({name, about, qualifications, experiences}) => {
         </h3>
 
         <ul className="pt-4 md:p-5">
-          <li className="flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]">
-            <div>
-              <span className="text-irisBlueColor text-[15px] leading-6 font-semibold">
-                {formatDate("9-3-2006")} - {formatDate("7-1-2013")}
-              </span>
-              <p className="text-[15px] leading-6 font-medium text-textColor">
-                PhD in Surgery
+          {qualifications?.map((item, index) => (
+            <li
+              key={index}
+              className="flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]"
+            >
+              <div>
+                <span className="text-irisBlueColor text-[15px] leading-6 font-semibold">
+                  {formatDate(item.startingDate)} -{" "}
+                  {formatDate(item.endingDate)}
+                </span>
+                <p className="text-[15px] leading-6 font-medium text-textColor">
+                  {item.degree}
+                </p>
+              </div>
+              <p className="text-[14px] leading-5 font-medium text-textColor">
+                {item.university}
               </p>
-            </div>
-            <p className="text-[14px] leading-5 font-medium text-textColor">
-              NewYork-Presbyterian Hospital
-            </p>
-          </li>
+            </li>
+          ))}
+
           <li className="flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]">
             <div>
               <span className="text-irisBlueColor text-[15px] leading-6 font-semibold">
@@ -50,39 +53,30 @@ const DoctorAbout = ({name, about, qualifications, experiences}) => {
           </li>
         </ul>
 
-        <div>
+        <div className="mt-12">
           <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold">
             Experience
           </h3>
 
-          <ul className= "grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5">
-            <li className= "p-4 rounded bg-[#fff9ea]">
-              <span className= "text-yellowColor text-[15px] leading-6 font-semibold">
-                {formatDate("9-3-2006")} - {formatDate("7-1-2013")}
-              </span>
-              <p className="text-[16px] leading-6 font-medium text-textColor">
-                Sr. Surgeon
-              </p>
-              <p className="text-[14px] leading-5 font-medium text-textColor">
-                NewYork-Presbyterian Hospital
-              </p>
-            </li>
-            <li className= "p-4 rounded bg-[#fff9ea]">
-              <span className= "text-yellowColor text-[15px] leading-6 font-semibold">
-                {formatDate("9-3-2006")} - {formatDate("7-1-2013")}
-              </span>
-              <p className="text-[16px] leading-6 font-medium text-textColor">
-                Sr. Surgeon
-              </p>
-              <p className="text-[14px] leading-5 font-medium text-textColor">
-                NewYork-Presbyterian Hospital
-              </p>
-            </li>
+          <ul className="grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5">
+            {experiences?.map((item, index) => {
+              <li className="p-4 rounded bg-[#fff9ea]">
+                <span className="text-yellowColor text-[15px] leading-6 font-semibold">
+                  {formatDate(experiences.startingDate)} - {formatDate(experiences.endingDate)}
+                </span>
+                <p className="text-[16px] leading-6 font-medium text-textColor">
+                  {item.position}
+                </p>
+                <p className="text-[14px] leading-5 font-medium text-textColor">
+                  {item.hospital}
+                </p>
+              </li>
+            })}
           </ul>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 export default DoctorAbout

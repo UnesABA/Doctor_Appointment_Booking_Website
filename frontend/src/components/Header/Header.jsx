@@ -87,11 +87,13 @@ const Header = () => {
             { token && user ? (
             <div>
               <Link to= {`${role === "patient" ? "/users/profile/me" : "/doctors/profile/me"}`}>
-                <figure className="w-[35px] h-[35px] rounded-[16px] overflow-hidden">
-                  <img src={user?.photo} className="w-full rounded-full" />
-                </figure>
-                <h1>{user?.name}</h1>
-                <img src= {user?.photo} />
+                <div className="flex flex-cols items-center gap-4">
+                  <h1>{user?.name}</h1>
+                  <figure className="w-[35px] h-[35px] rounded-[16px] overflow-hidden">
+                    <img src={user?.photo} className="w-full rounded-full" />
+                  </figure>
+                </div>
+                  
               </Link>
             </div>) :( 
             <Link to="/login">
